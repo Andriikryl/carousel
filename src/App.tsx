@@ -1,3 +1,5 @@
+import classNames from "classnames";
+
 const slides = [
   {
     title: "One Tap Setup",
@@ -50,10 +52,15 @@ function App() {
       <ul className="flex h-[500px] overflow-x-auto">
         {slides.map((slide) => (
           <li
-            className="flex flex-col bg-white w-[400px] rounded-xl shrink-0 mr-5 last:mr-0"
+            className="flex flex-col bg-white w-[400px] rounded-2xl shrink-0 mr-5 last:mr-0"
             key={slide.title}
           >
-            <div className=" h-full">
+            <div
+              className={classNames(
+                "flex h-full justify-center",
+                slide.centered ? "items-center" : "items-start"
+              )}
+            >
               <img
                 src={slide.img}
                 alt={slide.title}
@@ -61,7 +68,9 @@ function App() {
                 height={slide.imageHeight}
               />
             </div>
-            <h3 className=" mt-auto">{slide.title}</h3>
+            <h3 className=" mt-auto text-2xl font-semibold p-6">
+              {slide.title}
+            </h3>
           </li>
         ))}
       </ul>
