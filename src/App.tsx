@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { Chevron } from "./icons/chevron";
 
 const slides = [
   {
@@ -78,8 +79,16 @@ function App() {
           ))}
         </ul>
       </div>
-      <button>Previous</button>
-      <button>Next</button>
+      <div className="flex justify-center mt-4">
+        <button className="w-8 h-8 border-2 border-black rounded-full flex items-center justify-center mr-2">
+          <span className=" sr-only">Previous</span>
+          <Chevron className="w-3 h-3" />
+        </button>
+        <button className="w-8 h-8 border-2 border-black rounded-full flex items-center justify-center mr-2">
+          <span className=" sr-only">Next</span>
+          <Chevron className=" rotate-180 w-3 h-3 " />
+        </button>
+      </div>
     </div>
   );
 }
