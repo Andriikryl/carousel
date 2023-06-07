@@ -49,31 +49,35 @@ function App() {
       <h2 className=" font-semibold text-6xl text-center max-w-[800px] mx-auto mb-20">
         A magical connetcion to your device
       </h2>
-      <ul className="flex h-[500px] overflow-x-auto">
-        {slides.map((slide) => (
-          <li
-            className="flex flex-col bg-white w-[400px] rounded-2xl shrink-0 mr-5 last:mr-0"
-            key={slide.title}
-          >
-            <div
-              className={classNames(
-                "flex h-full justify-center",
-                slide.centered ? "items-center" : "items-start"
-              )}
+      <div className="h-[500px] overflow-hidden">
+        <ul className="flex h-[540px] overflow-x-auto snap-x snap-mandatory pb-10">
+          {slides.map((slide) => (
+            <li
+              className=" snap-start snap-alway shrink-0 mr-5 last:mr-0"
+              key={slide.title}
             >
-              <img
-                src={slide.img}
-                alt={slide.title}
-                width={slide.imageWidth}
-                height={slide.imageHeight}
-              />
-            </div>
-            <h3 className=" mt-auto text-2xl font-semibold p-6">
-              {slide.title}
-            </h3>
-          </li>
-        ))}
-      </ul>
+              <div className="slide-center relative h-full flex flex-col bg-white w-[400px] rounded-2xl">
+                <div
+                  className={classNames(
+                    "flex h-full justify-center",
+                    slide.centered ? "items-center" : "items-start"
+                  )}
+                >
+                  <img
+                    src={slide.img}
+                    alt={slide.title}
+                    width={slide.imageWidth}
+                    height={slide.imageHeight}
+                  />
+                </div>
+                <h3 className=" mt-auto text-2xl font-semibold p-6">
+                  {slide.title}
+                </h3>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
