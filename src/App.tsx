@@ -78,6 +78,8 @@ function App() {
           ))}
         </ul>
       </div>
+      <button>Previous</button>
+      <button>Next</button>
     </div>
   );
 }
