@@ -42,7 +42,23 @@ const slides = [
 ];
 
 function App() {
-  return <div className=""></div>;
+  return (
+    <div className="bg-gray-200 min-h-screen font-sans py-16">
+      <h2 className=" font-semibold text-6xl text-center max-w-[800px] mx-auto mb-20">
+        A magical connetcion to your device
+      </h2>
+      <ul className="flex h-[500px]">
+        {slides.map((slide) => (
+          <li
+            className=" bg-white w-[400px] rounded-xl shrink-0"
+            key={slide.title}
+          >
+            {slide.title}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default App;
