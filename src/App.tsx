@@ -47,13 +47,21 @@ function App() {
       <h2 className=" font-semibold text-6xl text-center max-w-[800px] mx-auto mb-20">
         A magical connetcion to your device
       </h2>
-      <ul className="flex h-[500px]">
+      <ul className="flex h-[500px] overflow-x-auto">
         {slides.map((slide) => (
           <li
-            className=" bg-white w-[400px] rounded-xl shrink-0"
+            className="flex flex-col bg-white w-[400px] rounded-xl shrink-0 mr-5 last:mr-0"
             key={slide.title}
           >
-            {slide.title}
+            <div className=" h-full">
+              <img
+                src={slide.img}
+                alt={slide.title}
+                width={slide.imageWidth}
+                height={slide.imageHeight}
+              />
+            </div>
+            <h3 className=" mt-auto">{slide.title}</h3>
           </li>
         ))}
       </ul>
